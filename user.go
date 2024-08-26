@@ -2,17 +2,16 @@ package main
 
 import (
 	"github.com/doytowin/goooqo"
-	"github.com/doytowin/goooqo/core"
 )
 
 type UserEntity struct {
-	core.Int64Id
-	Username string
-	Email    string
-	Mobile   string
-	Nickname string
-	Memo     *string
-	Valid    bool
+	goooqo.Int64Id
+	Username *string `json:"username,omitempty"`
+	Email    *string `json:"email,omitempty"`
+	Mobile   *string `json:"mobile,omitempty"`
+	Nickname *string `json:"nickname,omitempty"`
+	Memo     *string `json:"memo,omitempty"`
+	Valid    *bool   `json:"valid,omitempty"`
 }
 
 func (u UserEntity) GetTableName() string {
@@ -22,6 +21,7 @@ func (u UserEntity) GetTableName() string {
 type UserQuery struct {
 	goooqo.PageQuery
 	IdGt         *int
+	IdIn         *[]int
 	EmailContain *string
 	MemoNull     *bool
 }

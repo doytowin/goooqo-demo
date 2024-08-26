@@ -1,0 +1,54 @@
+GET http://localhost:9090/user/
+
+### Create new users
+
+POST http://localhost:9090/user/
+Content-Type: application/json
+
+[{
+  "Username": "Ada Wong",
+  "Email": "AdaW@gmail.com",
+  "Mobile": "01066666",
+  "Nickname": "ada",
+  "Memo": "An agent.",
+  "Valid": true
+}, {
+  "Username": "Leon Kennedy",
+  "Email": "LeonKennedy@gmail.com",
+  "Mobile": "01077777",
+  "Nickname": "leon",
+  "Memo": "The hero.",
+  "Valid": true
+}]
+
+### Update all fields for user 2
+PUT http://localhost:9090/user/2
+Content-Type: application/json
+
+{
+  "Username": "Leon Kennedy",
+  "Email": "LeonKennedy@gmail.com"
+}
+
+### Update non-null fields for user 3
+PATCH http://localhost:9090/user/3
+Content-Type: application/json
+
+{
+  "Username": "Leon Kennedy",
+  "Email": "LeonKennedy@gmail.com"
+}
+
+### Delete a user
+DELETE http://localhost:9090/user/6
+
+### Update for users without memo
+PATCH http://localhost:9090/user/?memoNull=true
+Content-Type: application/json
+
+{
+  "Memo": "New memo."
+}
+
+### Delete users
+DELETE http://localhost:9090/user/?memoNull=false

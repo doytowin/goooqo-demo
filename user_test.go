@@ -25,7 +25,7 @@ func Test(t *testing.T) {
 			t.Error("Error", err)
 		}
 		if !(len(users) == 2 && users[0].Id == 2 &&
-			users[0].Nickname == "test2" && users[0].Memo == nil) {
+			*users[0].Nickname == "test2" && users[0].Memo == nil) {
 			t.Errorf("Data is not expected: %v", users)
 		}
 	})
