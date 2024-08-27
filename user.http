@@ -6,19 +6,19 @@ POST http://localhost:9090/user/
 Content-Type: application/json
 
 [{
-  "Username": "Ada Wong",
-  "Email": "AdaW@gmail.com",
-  "Mobile": "01066666",
-  "Nickname": "ada",
-  "Memo": "An agent.",
-  "Valid": true
+  "username": "Ada Wong",
+  "email": "AdaW@gmail.com",
+  "mobile": "01066666",
+  "nickname": "ada",
+  "memo": "An agent.",
+  "valid": true
 }, {
-  "Username": "Leon Kennedy",
-  "Email": "LeonKennedy@gmail.com",
-  "Mobile": "01077777",
-  "Nickname": "leon",
-  "Memo": "The hero.",
-  "Valid": true
+  "username": "Leon Kennedy",
+  "email": "LeonKennedy@gmail.com",
+  "mobile": "01077777",
+  "nickname": "leon",
+  "memo": "The hero.",
+  "valid": true
 }]
 
 ### Update all fields for user 2
@@ -26,8 +26,8 @@ PUT http://localhost:9090/user/2
 Content-Type: application/json
 
 {
-  "Username": "Leon Kennedy",
-  "Email": "LeonKennedy@gmail.com"
+  "username": "Leon Kennedy",
+  "email": "LeonKennedy@gmail.com"
 }
 
 ### Update non-null fields for user 3
@@ -35,8 +35,8 @@ PATCH http://localhost:9090/user/3
 Content-Type: application/json
 
 {
-  "Username": "Leon Kennedy",
-  "Email": "LeonKennedy@gmail.com"
+  "username": "Leon Kennedy",
+  "email": "LeonKennedy@gmail.com"
 }
 
 ### Delete a user
@@ -47,7 +47,7 @@ PATCH http://localhost:9090/user/?memoNull=true
 Content-Type: application/json
 
 {
-  "Memo": "New memo."
+  "memo": "New memo."
 }
 
 ### Delete users
