@@ -2,11 +2,12 @@ package main
 
 import (
 	"context"
-	"github.com/doytowin/goooqo/core"
 	"github.com/doytowin/goooqo/rdb"
 	_ "github.com/mattn/go-sqlite3"
 	"testing"
 )
+
+func P[T any](t T) *T { return &t }
 
 func Test(t *testing.T) {
 	db := rdb.Connect("local.properties")
@@ -17,8 +18,7 @@ func Test(t *testing.T) {
 	userDataAccess := rdb.NewTxDataAccess[UserEntity](tm)
 
 	t.Run("Query", func(t *testing.T) {
-		emailContain := "test"
-		userQuery := UserQuery{EmailContain: &emailContain, MemoNull: core.PBool(true)}
+		userQuery := UserQuery{EmailContain: P("test"), MemoNull: P(true)}
 		users, err := userDataAccess.Query(ctx, &userQuery)
 
 		if err != nil {

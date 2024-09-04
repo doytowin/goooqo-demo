@@ -8,7 +8,6 @@ type UserEntity struct {
 	goooqo.Int64Id
 	Username *string `json:"username,omitempty"`
 	Email    *string `json:"email,omitempty"`
-	Mobile   *string `json:"mobile,omitempty"`
 	Nickname *string `json:"nickname,omitempty"`
 	Memo     *string `json:"memo,omitempty"`
 	Valid    *bool   `json:"valid,omitempty"`
