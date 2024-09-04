@@ -3,7 +3,7 @@ module github.com/doytowin/goooqo-demo
 go 1.21
 
 require (
-	github.com/doytowin/goooqo v0.1.3
+	github.com/doytowin/goooqo v0.1.4
 	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/sirupsen/logrus v1.9.3
 )
