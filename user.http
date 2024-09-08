@@ -8,14 +8,12 @@ Content-Type: application/json
 [{
   "username": "Ada Wong",
   "email": "AdaW@gmail.com",
-  "mobile": "01066666",
   "nickname": "ada",
   "memo": "An agent.",
   "valid": true
 }, {
   "username": "Leon Kennedy",
   "email": "LeonKennedy@gmail.com",
-  "mobile": "01077777",
   "nickname": "leon",
   "memo": "The hero.",
   "valid": true

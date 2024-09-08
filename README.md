@@ -9,12 +9,12 @@ This repo shows how to use [GoooQo](https://github.com/doytowin/goooqo) to acces
 
 The [test.db](test.db) is a database of sqlite which contains a simple table `t_user` with 4 rows.
 
-| id | username | password | email        | mobile      | nickname | memo | valid |
-|----|----------|----------|--------------|-------------|----------|------|-------|
-| 1  | f0rb     | 123456   | f0rb@163.com | 18888888881 | test1    |      | true  |
-| 2  | user2    | 123456   | test2@qq.com | 18888888882 | test2    |      | false |
-| 3  | user3    | 123456   | test3@qq.com | 18888888883 | test3    | memo | true  |
-| 4  | user4    | 123456   | test4@qq.com | 18888888884 | test4    |      | true  |
+| id | username | email        | nickname | memo | valid |
+|----|----------|--------------|----------|------|-------|
+| 1  | f0rb     | f0rb@163.com | test1    |      | true  |
+| 2  | user2    | test2@qq.com | test2    |      | false |
+| 3  | user3    | test3@qq.com | test3    | memo | true  |
+| 4  | user4    | test4@qq.com | test4    |      | true  |
 
 With GoooQo, we only need to define the structs `UserEntity` and `UserQuery` in [user.go](user.go),
 where `UserEntity` corresponds to the table `t_user` and `UserQuery` is used to build the query clause.

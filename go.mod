@@ -1,6 +1,6 @@
 module github.com/doytowin/goooqo-demo
 
-go 1.21
+go 1.18
 
 require (
 	github.com/doytowin/goooqo v0.1.4
