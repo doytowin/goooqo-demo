@@ -4,12 +4,11 @@ import (
 	"context"
 	"database/sql"
 	"encoding/json"
+	. "github.com/doytowin/goooqo/core"
 	"github.com/doytowin/goooqo/rdb"
 	_ "github.com/mattn/go-sqlite3"
 	"testing"
 )
-
-func P[T any](t T) *T { return &t }
 
 func Test(t *testing.T) {
 	db, err := sql.Open("sqlite3", "./test.db")

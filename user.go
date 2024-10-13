@@ -1,11 +1,9 @@
 package main
 
-import (
-	"github.com/doytowin/goooqo"
-)
+import . "github.com/doytowin/goooqo/core"
 
 type UserEntity struct {
-	goooqo.Int64Id
+	Int64Id
 	Username *string `json:"username,omitempty"`
 	Email    *string `json:"email,omitempty"`
 	Nickname *string `json:"nickname,omitempty"`
@@ -18,7 +16,7 @@ func (u UserEntity) GetTableName() string {
 }
 
 type UserQuery struct {
-	goooqo.PageQuery
+	PageQuery
 	IdGt         *int
 	IdIn         *[]int
 	EmailContain *string
