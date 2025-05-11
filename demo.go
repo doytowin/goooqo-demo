@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/doytowin/goooqo/core"
 	"github.com/doytowin/goooqo/rdb"
 	"github.com/doytowin/goooqo/web"
 	_ "github.com/mattn/go-sqlite3"
@@ -15,8 +16,14 @@ func main() {
 	defer rdb.Disconnect(db)
 	tm := rdb.NewTransactionManager(db)
 
-	userDataAccess := rdb.NewTxDataAccess[UserEntity](tm)
-	web.BuildRestService[UserEntity, UserQuery]("/user/", userDataAccess)
+	// Init data layer
+	core.RegisterJoinTable("role", "user", "a_user_and_role")
+	UserDataAccess = rdb.NewTxDataAccess[UserEntity](tm)
+	RoleDataAccess = rdb.NewTxDataAccess[RoleEntity](tm)
+
+	// Init web layer
+	web.BuildRestService[UserEntity, UserQuery]("/user/", UserDataAccess)
+	web.BuildRestService[RoleEntity, RoleQuery]("/role/", RoleDataAccess)
 
 	err := http.ListenAndServe(":9090", nil)
 	if err != nil {

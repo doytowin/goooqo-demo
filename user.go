@@ -24,3 +24,5 @@ type UserQuery struct {
 	Valid        *bool
 	UserOr       *[]UserQuery
 }
+
+var UserDataAccess TxDataAccess[UserEntity]

@@ -1,0 +1,13 @@
+GET http://localhost:9090/role/
+
+### By idIN
+GET http://localhost:9090/role/?idIn=1,4
+
+### By RoleNameStart
+GET http://localhost:9090/role/?roleNameStart=vip
+
+### By RoleNameStart
+GET http://localhost:9090/role/?roleNameStart=vip
+
+### By WithUsers
+GET http://localhost:9090/role/?WithUsers.Valid=true

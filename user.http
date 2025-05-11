@@ -1,5 +1,14 @@
 GET http://localhost:9090/user/
 
+### By idIN
+GET http://localhost:9090/user/?idIn=3,4
+
+### By idIN and desc
+GET http://localhost:9090/user/?idIn=3,4&sort=id,desc
+
+### By memoNull
+GET http://localhost:9090/user/?memoNull=false
+
 ### Create new users
 
 POST http://localhost:9090/user/
